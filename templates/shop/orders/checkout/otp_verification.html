@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}OTP Verification | SOKOBORA GROCERIES{% endblock title %}
+{% block content %}
+
+<section class="single-products  products-two section-padding " style="padding-bottom:350px;">
+    <div class="container">
+            <div class="row">
+                <h2>OTP Verification</h2>
+                <h3>For your safety, we'd like to confirm it's you conducting actitivies on this system.
+                     Kindly enter the code sent to your email</h3>
+                <form method="post" action={% url 'orders:order_complete' %} >
+                    {% csrf_token %}
+                    <label for="otp">Enter the OTP sent to your email:</label>
+                    <input style="background:#1c1427;" type="text" name="otp" id="otp" required>
+                    <button type="submit" style="background:#1c1427;">Verify</button>
+                </form>
+
+            </div>
+    </div>
+</section>
+
+{% endblock content%}

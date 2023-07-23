@@ -1,0 +1,490 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SOKOBORA GROCERIES{% endblock title %}
+{% block content %}
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- header section end -->
+        <!-- slider-section-start -->
+        <div style="margin-top:50px;margin-bottom:50px"   class=" container main-slider-one main-slider-two slider-area">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<div class=" carousel-inner">
+					<div class="carousel-item active row">
+					<img style="width: 100%;height: auto;" class="d-block w-100"  src="{% static 'img/rainbow.jpg' %}" alt="First slide">
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<!-- slider section end -->
+        <!-- collection section start -->
+		<section style="background:#9E5A8D;"  class="collection-area collection-area2 section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="collect-single banner collect-one">
+							<a href="#"><img src="{% static 'img/new/covaer1.jpg' %}" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="colect-text ">
+							<h4><a href="#">Fresh Produce</a></h4>
+							<h5>Big Sale on Produce! <br /> Up To 23% Off!</h5>
+							<a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
+						</div>
+						<div class="collect-img banner margin collect-single">
+							<a href="#"><img src="{% static 'img/new/0.jpg' %}" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="collect-img banner collect-single">
+							<a href="#"><img src="{% static 'img/new/1.jpg' %}" alt="" /></a>
+						</div>
+						<div class="colect-text ">
+							<h4><a href="#">Fruits Of the Season</a></h4>
+							<p>There are many variations of passages of Lorem Ipsum avalabbut the majority have suffered alteration in some form.</p>
+							<a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<br><br>
+		<!-- collection section end -->
+        <!-- featured-products section start -->
+		<section class="single-products  products-two section-padding extra-padding-bottom">
+			<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="section-title text-center">
+								<h2>Featured Products</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+						  {% for category in categories %}
+							<li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+						  {% endfor %}
+						</ol>
+					  
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+						  {% for category in categories %}
+							<div class="item {% if forloop.first %}active{% endif %}">
+							  <img src="{{ category.image.url }}" alt="{{ category.name }}">
+							  <div class="carousel-caption">
+								<h3>{{ category.name }}</h3>
+								<p>{{ category.description }}</p>
+							  </div>
+							</div>
+						  {% endfor %}
+						</div>
+					  
+						<!-- Controls -->
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+						  <span class="glyphicon glyphicon-chevron-left"></span>
+						  <span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next">
+						  <span class="glyphicon glyphicon-chevron-right"></span>
+						  <span class="sr-only">Next</span>
+						</a>
+					  </div>
+					
+			</div>
+		</section><br><br>
+		<!-- featured-products section end -->
+		<!-- coming product section start -->
+		<section style="background:#9E5A8D" class="coming-product coming-product2">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 col-md-2">
+						<div class="tab-menu nav nav-tabs padding">
+							<ul>
+								<li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="{% static 'img/new/000.jpg' %}" alt="" /></a></li>
+								<li><a href="#dress2" data-toggle="tab" data-target="#dress2,#text2"><img src="{% static 'img/new/0000.jpg' %}" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-7 col-md-5">
+						<div class="text-center large-img tab-content">
+							<div class="tab-pane fade in active" id="dress1">
+								<img src="{% static 'img/new/coverasd1.jpg' %}" alt="" />
+								<div class="count-text clearfix">
+									<ul id="countdown-1">
+										<li>
+											<p class="timeRefDays timedescription">days</p>
+											<span class="days timenumbers">02</span>
+										</li>
+										<li>
+											<p class="timeRefHours timedescription">hrs</p>
+											<span class="hours timenumbers">14</span>
+										</li>
+										<li>
+											<p class="timeRefMinutes timedescription">mins</p>
+											<span class="minutes timenumbers">60</span>
+										</li>
+										<li>
+											<p class="timeRefSeconds timedescription">secs</p>
+											<span class="seconds timenumbers">33</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="dress2">
+								<img src="{% static 'img/coming/l2.jpg' %}" alt="" />
+								<div class="count-text clearfix">
+									<ul id="countdown-2">
+										<li>
+											<p class="timeRefDays timedescription">days</p>
+											<span class="days timenumbers">00</span>
+										</li>
+										<li>
+											<p class="timeRefHours timedescription">hrs</p>
+											<span class="hours timenumbers">00</span>
+										</li>
+										<li>
+											<p class="timeRefMinutes timedescription">mins</p>
+											<span class="minutes timenumbers">00</span>
+										</li>
+										<li>
+											<p class="timeRefSeconds timedescription">secs</p>
+											<span class="seconds timenumbers">00</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-5">
+						<div class="padding">
+							<div class="tab-content" >
+								<div class="single-coming tab-pane fade in active" id="text1">
+									<h4><a href="#">Varirty of Produce</a></h4>
+									<span><strong>$56.90</strong>   <del>$66.90</del></span>
+									<p class="come-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoes tempor incididunt ut labore et dolore magna aliqua. consequat. Ut enim ad minim veniam.</p>
+									<ul class="color-size">
+										{% comment %} <li><span>Size</span><strong>:</strong> <a href="#">SL</a><a href="#">ML</a><a href="#">Xl</a></li>
+										<li><span>color</span><strong>:</strong> <a href="#">Red</a><a href="#">Grean</a><a href="#">Blue</a></li>
+										<li><span>Brand</span><strong>:</strong>Crazy Fashion</li> {% endcomment %}
+										<li><span>category</span><strong>:</strong>Fresh Produce</li>
+									</ul>
+								</div>
+								<div class="single-coming tab-pane fade" id="text2">
+									<h4><a href="#">Dairy Heaven</a></h4>
+									<span><strong>Starting from $5.00</strong>   <del>$6.00</del></span>
+									<p class="come-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed does eiusmodes tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim venim, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoes tempor incididunt ut labore et dolore magna aliqua. consequat. Ut enim ad minim veniam.</p>
+									<ul class="color-size">
+										{% comment %} <li><span>Size</span><strong>:</strong> <a href="#">SL</a><a href="#">ML</a><a href="#">Xl</a></li>
+										<li><span>color</span><strong>:</strong> <a href="#">Red</a><a href="#">Grean</a><a href="#">Blue</a></li>
+										<li><span>Brand</span><strong>:</strong>Crazy Fashion</li> {% endcomment %}
+										<li><span>category</span><strong>:</strong>Dairy</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><br>
+        <!-- coming product section end -->
+        <!-- tab-products section start -->
+		<div class="tab-products single-products products-two section-padding extra-padding-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="section-title text-center">
+							<div class="col-xs-12">
+								<div class="section-title text-center">
+									<h2>Products</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center tab-content">
+					<div class="tab-pane  fade in active" id="all">
+						<div class="wrapper">
+							<ul class="load-list load-list-two">
+								<li>
+									<div class="row text-center">
+										{% for product in products|slice:':8' %}
+										<div  class="col-xs-12 col-sm-6 col-md-3">
+											<div style="margin-top:10px" style="width:100%; height:500px" class="single-product">
+												<div class="product-img">
+													<a href="#"><img style="width:100%; height:350px"src="{{ product.image.url}}" alt="Product Title" /></a>
+													
+														<div class="actions-btn">
+															<a style="margin-left:20px" href="{% url 'cart:add_cart' product.id %}"><i class="mdi mdi-cart"></i></a>
+															<a href="{{product.get_prodcut_details_url}}"><i class="mdi mdi-eye"></i></a>
+														</div>
+													
+												</div>
+												<div class="product-dsc">
+													<p><a href="#">{{product.name}}</a></p>
+													<span>${{product.price}}</span>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><br><br>
+		<!-- tab-products section end -->
+        <!-- blog section start -->
+		<section style="background:#9E5A8D" class="latest-blog section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="section-title text-center">
+							<h2>Latest Blog</h2>
+						</div>
+					</div>
+				</div>
+				<div class="wrapper">
+					<ul class="load-list load-list-blog">
+						<li>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/000000.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Avocados are Back!</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">42 Likes</a> | <a href="#">84 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> May 20, 2021</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/covaer1.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Brussels are Sprouting</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">35 Likes</a> | <a href="#">57 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> Oct 7, 2022</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/coverasd1.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Benefits of Leafy Greens</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">78 Likes</a> | <a href="#">49 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> Jul 13, 2022</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/000000.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Avocados are Back!</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">42 Likes</a> | <a href="#">84 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> May 20, 2021</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/covaer1.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Brussels are Sprouting</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">35 Likes</a> | <a href="#">57 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> Oct 7, 2022</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="l-blog-text">
+										<div class="banner"><a href="single-blog.html"><img style="max-width:100%;height:500px" src="{% static 'img/new/coverasd1.jpg' %}" alt="" /></a></div>
+										<div class="s-blog-text">
+											<h4><a href="single-blog.html">Benefits of Leafy Greens</a></h4>
+											<span>By : <a href="#">Faith</a> | <a href="#">78 Likes</a> | <a href="#">49 Comments</a></span>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+										</div>
+										<div class="date-read clearfix">
+											<a href="#"><i class="mdi mdi-clock"></i> Jul 13, 2022</a>
+											<a href="single-blog.html">Read More</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<button id="load-more-blog">Load More</button>
+				</div>
+			</div>
+		</section>
+		<!-- blog section end -->
+        <!-- quick view start -->
+		<div class="product-details quick-view modal animated zoomInUp" id="quick-view">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="d-table">
+							<div class="d-tablecell">
+								<div class="modal-dialog">
+									<div class="main-view modal-content">
+										<div class="modal-footer" data-dismiss="modal">
+											<span>x</span>
+										</div>
+										<div class="row">
+											<div class="col-xs-12 col-sm-5 col-md-4">
+												<div class="quick-image">
+													<div class="single-quick-image text-center">
+														<div class="list-img">
+															<div class="product-img tab-content">
+																<div class="simpleLens-container tab-pane fade in" id="sin-1">
+																	<div class="pro-type">
+																		<span>new</span>
+																	</div>
+																	<a class="simpleLens-image" data-lens-image="img/products/z1.jpg' %}" href="#"><img src="{% static 'img/products/z1.jpg' %}" alt="" class="simpleLens-big-image"></a>
+																</div>
+																<div class="simpleLens-container tab-pane active fade in" id="sin-2">
+																	<div class="pro-type sell">
+																		<span>Sale</span>
+																	</div>
+																	<a class="simpleLens-image" data-lens-image="img/products/z2.jpg' %}" href="#"><img src="{% static 'img/products/z2.jpg' %}" alt="" class="simpleLens-big-image"></a>
+																</div>
+																<div class="simpleLens-container tab-pane fade in" id="sin-3">
+																	<div class="pro-type">
+																		<span>-15%</span>
+																	</div>
+																	<a class="simpleLens-image" data-lens-image="img/products/z3.jpg' %}" href="#"><img src="{% static 'img/products/z3.jpg' %}" alt="" class="simpleLens-big-image"></a>
+																</div>
+																<div class="simpleLens-container tab-pane fade in" id="sin-4">
+																	<div class="pro-type">
+																		<span>New</span>
+																	</div>
+																	<a class="simpleLens-image" data-lens-image="img/products/z4.jpg' %}" href="#"><img src="{% static 'img/products/z4.jpg' %}" alt="" class="simpleLens-big-image"></a>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="quick-thumb">
+														<ul class="product-slider">
+															<li><a data-toggle="tab" href="#sin-1"> <img src="{% static 'img/products/s1.jpg' %}" alt="quick view" /> </a></li>
+															<li class="active"><a data-toggle="tab" href="#sin-2"> <img src="{% static 'img/products/s2.jpg' %}" alt="small image" /> </a></li>
+															<li><a data-toggle="tab" href="#sin-3"> <img src="{% static 'img/products/s3.jpg' %}" alt="small image" /> </a></li>
+															<li><a data-toggle="tab" href="#sin-4"> <img src="{% static 'img/products/s4.jpg' %}" alt="small image" /> </a></li>
+														</ul>
+													</div>
+												</div>						
+											</div>
+											<div class="col-xs-12 col-sm-7 col-md-8">
+												<div class="quick-right">
+													<div class="list-text">
+														<h3>All White Produce</h3>
+														<span>White Produce</span>
+														<div class="ratting floatright">
+															<p>( 35 Rating )</p>
+															<i class="mdi mdi-star"></i>
+															<i class="mdi mdi-star"></i>
+															<i class="mdi mdi-star"></i>
+															<i class="mdi mdi-star-half"></i>
+															<i class="mdi mdi-star-outline"></i>
+														</div>
+														<h5><del>From $79.30</del> $69.30</h5>
+														<p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum, you neede be sure there isn't anything embarrassing hidden in the middle of text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+														<div class="all-choose">
+															<div class="s-shoose">
+																<h5>Color</h5>
+																<div class="color-select clearfix">
+																	<span></span>
+																	<span class="outline"></span>
+																	<span></span>
+																	<span></span>
+																</div>
+															</div>
+															<div class="s-shoose">
+																<h5>size</h5>
+																<div class="size-drop">
+																	<div class="btn-group">
+																		<button type="button" class="btn">XL</button>
+																		<button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																			<span class=""><i class="mdi mdi-chevron-down"></i></span>
+																		</button>
+																		<ul class="dropdown-menu">
+																			<li><a href="#">Xl</a></li>
+																			<li><a href="#">SL</a></li>
+																			<li><a href="#">S</a></li>
+																			<li><a href="#">L</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+															<div class="s-shoose">
+																<h5>qty</h5>
+																<form action="#" method="POST">
+																	<div class="plus-minus">
+																		<a class="dec qtybutton">-</a>
+																		<input type="text" value="02" name="qtybutton" class="plus-minus-box">
+																		<a class="inc qtybutton">+</a>
+																	</div>
+																</form>
+															</div>
+														</div>
+														<div class="list-btn">
+															<a href="#">add to cart</a>
+															<a href="#">wishlist</a>
+															<a href="#">zoom</a>
+														</div>
+														<div class="share-tag clearfix">
+															<ul class="blog-share floatleft">
+																<li><h5>share </h5></li>
+																<li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+																<li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
+																<li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
+																<li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
+																<li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
+																<li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock content %}

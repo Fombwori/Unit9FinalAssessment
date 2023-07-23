@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About | SOKOBORA GROCERIES{% endblock title %}
+{% block content %}
+<section class="single-products  products-two section-padding extra-padding-bottom">
+    <div class="container">
+            <div class="row">
+                <h2>About Us</h2>
+                <p>
+                    But I must explain to you how all this mistaken idea of denouncing pleasure 
+                    and praising pain was born and I will give you a complete account of the system, 
+                    and expound the actual teachings of the great explorer of the truth, the master-builder 
+                    of human happiness. No one rejects, dislikes, or avoids pleasure itself, <br>because it is 
+                    pleasure, but because those who do not know how to pursue pleasure rationally encounter 
+                    consequences that are extremely painful. Nor again is there anyone who loves or pursues 
+                    or desires to obtain pain of itself,</br> because it is pain, but because occasionally 
+                    circumstances occur in which toil and pain can procure him some great pleasure. 
+                    To take a trivial example, which of us ever undertakes laborious physical exercise, 
+                    except to obtain some advantage from it? But who has any right to find fault with a man
+                     who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a 
+                     pain that produces no resultant pleasure?"
+
+                </p>
+                <div class="row col-md-6">
+                    <div class="collect-img banner collect-single">
+                        <a href="#"><img src="{% static 'img/new/1.jpg' %}" alt="" /></a>
+                    </div>
+                    <div class="colect-text ">
+                        <h4><a href="#">Fruits Of the Season</a></h4>
+                        <p>There are many variations of passages of Lorem Ipsum avalabbut the majority have suffered alteration in some form.</p>
+                        <a href="{% url 'shop:shop' %}>Shop Now <i class="mdi mdi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <p>
+                    But I must explain to you how all this mistaken idea of denouncing pleasure 
+                    and praising pain was born and I will give you a complete account of the system, 
+                    and expound the actual teachings of the great explorer of the truth, the master-builder 
+                    of human happiness. No one rejects, dislikes, or avoids pleasure itself, <br>because it is 
+                    pleasure, but because those who do not know how to pursue pleasure rationally encounter 
+                    consequences that are extremely painful. Nor again is there anyone who loves or pursues 
+                    or desires to obtain pain of itself,</br> because it is pain, but because occasionally 
+                    circumstances occur in which toil and pain can procure him some great pleasure. 
+                    To take a trivial example, which of us ever undertakes laborious physical exercise, 
+                    except to obtain some advantage from it? But who has any right to find fault with a man
+                     who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a 
+                     pain that produces no resultant pleasure?"
+
+                </p>
+
+            </div>
+    </div>
+</section>
+{% endblock content%}
